@@ -1,0 +1,13 @@
+﻿{
+  From: DX Team <test@example.com>,
+  Personalizations: [
+    {
+      Tos: [
+        Test User <test@example.com>
+      ]
+    }
+  ],
+  Subject: Sending with Twilio SendGrid is Fun,
+  PlainTextContent: and easy to do anywhere, even with C#,
+  HtmlContent: <strong>and easy to do anywhere, even with C#</strong>
+}

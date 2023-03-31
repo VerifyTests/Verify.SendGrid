@@ -1,0 +1,5 @@
+﻿{
+  Filename: name.txt,
+  Disposition: text/html; charset=utf-8,
+  Content: The content
+}

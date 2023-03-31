@@ -1,22 +1,18 @@
-﻿using System.Collections.Specialized;
-using SendGrid.Helpers.Mail;
+﻿using SendGrid.Helpers.Mail;
 
 [UsesVerify]
 public class Tests
 {
-    #region MailAttachment
+    #region Attachment
 
     [Fact]
-    public Task MailAttachment()
+    public Task Attachment()
     {
-        var attachment = new Attachment(
-            new MemoryStream(new byte[]
-            {
-                1
-            }),
-            new ContentType("text/html; charset=utf-8"))
+        var attachment = new Attachment
         {
-            Name = "name.txt"
+            Filename = "name.txt",
+            Content = "The content",
+            Disposition = "text/html; charset=utf-8"
         };
         return Verify(attachment);
     }
@@ -24,15 +20,19 @@ public class Tests
     #endregion
 
 
-    #region MailMessage
+    #region SendGridMessage
 
     [Fact]
-    public Task MailMessage()
+    public Task SendGridMessage()
     {
-        var mail = new SendGridMessage(
-            from: "from@mail.com",
-            to: "to@mail.com", subject: "The subject",
-            body: "The body");
+        var mail = new SendGridMessage
+        {
+            From = new("test@example.com", "DX Team"),
+            Subject = "Sending with Twilio SendGrid is Fun",
+            PlainTextContent = "and easy to do anywhere, even with C#",
+            HtmlContent = "<strong>and easy to do anywhere, even with C#</strong>"
+        };
+        mail.AddTo(new EmailAddress("test@example.com", "Test User"));
         return Verify(mail);
     }
 

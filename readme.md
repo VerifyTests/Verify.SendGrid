@@ -19,148 +19,90 @@ https://nuget.org/packages/Verify.MailMessage/
 ```cs
 [ModuleInitializer]
 public static void Initialize() =>
-    VerifyMailMessage.Initialize();
+    VerifySendGrid.Initialize();
 ```
 <sup><a href='/src/Tests/ModuleInitializer.cs#L3-L9' title='Snippet source file'>snippet source</a> | <a href='#snippet-enable' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
-### ContentDisposition
-
-<!-- snippet: ContentDisposition -->
-<a id='snippet-contentdisposition'></a>
-```cs
-[Fact]
-public Task ContentDisposition()
-{
-    var content = new ContentDisposition("attachment; filename=\"filename.jpg\"");
-    return Verify(content);
-}
-```
-<sup><a href='/src/Tests/Tests.cs#L8-L17' title='Snippet source file'>snippet source</a> | <a href='#snippet-contentdisposition' title='Start of snippet'>anchor</a></sup>
-<!-- endSnippet -->
-
-Results in: 
-
-<!-- snippet: Tests.ContentDisposition.verified.txt -->
-<a id='snippet-Tests.ContentDisposition.verified.txt'></a>
-```txt
-{
-  DispositionType: attachment,
-  FileName: filename.jpg
-}
-```
-<sup><a href='/src/Tests/Tests.ContentDisposition.verified.txt#L1-L4' title='Snippet source file'>snippet source</a> | <a href='#snippet-Tests.ContentDisposition.verified.txt' title='Start of snippet'>anchor</a></sup>
-<!-- endSnippet -->
-
-
-### ContentType
-
-<!-- snippet: ContentType -->
-<a id='snippet-contenttype'></a>
-```cs
-[Fact]
-public Task ContentType()
-{
-    var content = new ContentType("text/html; charset=utf-8")
-    {
-        Name = "name.txt"
-    };
-    return Verify(content);
-}
-```
-<sup><a href='/src/Tests/Tests.cs#L38-L50' title='Snippet source file'>snippet source</a> | <a href='#snippet-contenttype' title='Start of snippet'>anchor</a></sup>
-<!-- endSnippet -->
-
-Results in: 
-
-<!-- snippet: Tests.ContentType.verified.txt -->
-<a id='snippet-Tests.ContentType.verified.txt'></a>
-```txt
-{
-  MediaType: text/html,
-  Name: name.txt,
-  CharSet: utf-8
-}
-```
-<sup><a href='/src/Tests/Tests.ContentType.verified.txt#L1-L5' title='Snippet source file'>snippet source</a> | <a href='#snippet-Tests.ContentType.verified.txt' title='Start of snippet'>anchor</a></sup>
-<!-- endSnippet -->
-
-
 ### Attachment
 
-<!-- snippet: MailAttachment -->
-<a id='snippet-mailattachment'></a>
+<!-- snippet: Attachment -->
+<a id='snippet-attachment'></a>
 ```cs
 [Fact]
-public Task MailAttachment()
+public Task Attachment()
 {
-    var attachment = new Attachment(
-        new MemoryStream(new byte[]
-        {
-            1
-        }),
-        new ContentType("text/html; charset=utf-8"))
+    var attachment = new Attachment
     {
-        Name = "name.txt"
+        Filename = "name.txt",
+        Content = "The content",
+        Disposition = "text/html; charset=utf-8"
     };
     return Verify(attachment);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L69-L86' title='Snippet source file'>snippet source</a> | <a href='#snippet-mailattachment' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L6-L20' title='Snippet source file'>snippet source</a> | <a href='#snippet-attachment' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Results in: 
 
-<!-- snippet: Tests.MailAttachment.verified.txt -->
-<a id='snippet-Tests.MailAttachment.verified.txt'></a>
+<!-- snippet: Tests.Attachment.verified.txt -->
+<a id='snippet-Tests.Attachment.verified.txt'></a>
 ```txt
 {
-  Name: name.txt,
-  ContentType: {
-    MediaType: text/html,
-    Name: name.txt,
-    CharSet: utf-8
-  }
+  Filename: name.txt,
+  Disposition: text/html; charset=utf-8,
+  Content: The content
 }
 ```
-<sup><a href='/src/Tests/Tests.MailAttachment.verified.txt#L1-L8' title='Snippet source file'>snippet source</a> | <a href='#snippet-Tests.MailAttachment.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.Attachment.verified.txt#L1-L5' title='Snippet source file'>snippet source</a> | <a href='#snippet-Tests.Attachment.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
 
-### MailMessage
+### SendGridMessage
 
-<!-- snippet: MailMessage -->
-<a id='snippet-mailmessage'></a>
+<!-- snippet: SendGridMessage -->
+<a id='snippet-sendgridmessage'></a>
 ```cs
 [Fact]
-public Task MailMessage()
+public Task SendGridMessage()
 {
-    var mail = new MailMessage(
-        from: "from@mail.com",
-        to: "to@mail.com", subject: "The subject",
-        body: "The body");
+    var mail = new SendGridMessage
+    {
+        From = new("test@example.com", "DX Team"),
+        Subject = "Sending with Twilio SendGrid is Fun",
+        PlainTextContent = "and easy to do anywhere, even with C#",
+        HtmlContent = "<strong>and easy to do anywhere, even with C#</strong>"
+    };
+    mail.AddTo(new EmailAddress("test@example.com", "Test User"));
     return Verify(mail);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L104-L116' title='Snippet source file'>snippet source</a> | <a href='#snippet-mailmessage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L23-L39' title='Snippet source file'>snippet source</a> | <a href='#snippet-sendgridmessage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Results in: 
 
-<!-- snippet: Tests.MailMessage.verified.txt -->
-<a id='snippet-Tests.MailMessage.verified.txt'></a>
+<!-- snippet: Tests.SendGridMessage.verified.txt -->
+<a id='snippet-Tests.SendGridMessage.verified.txt'></a>
 ```txt
 {
-  From: from@mail.com,
-  To: to@mail.com,
-  Subject: The subject,
-  IsBodyHtml: false,
-  Body: The body
+  From: DX Team <test@example.com>,
+  Personalizations: [
+    {
+      Tos: [
+        Test User <test@example.com>
+      ]
+    }
+  ],
+  Subject: Sending with Twilio SendGrid is Fun,
+  PlainTextContent: and easy to do anywhere, even with C#,
+  HtmlContent: <strong>and easy to do anywhere, even with C#</strong>
 }
 ```
-<sup><a href='/src/Tests/Tests.MailMessage.verified.txt#L1-L7' title='Snippet source file'>snippet source</a> | <a href='#snippet-Tests.MailMessage.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.SendGridMessage.verified.txt#L1-L13' title='Snippet source file'>snippet source</a> | <a href='#snippet-Tests.SendGridMessage.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
