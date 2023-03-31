@@ -18,6 +18,7 @@ public static class VerifySendGrid
         {
             _.Converters.Add(new EmailAddressConverter());
             _.Converters.Add(new AttachmentConverter());
+            _.Converters.Add(new PersonalizationConverter());
             _.Converters.Add(new SendGridMessageConverter());
         });
     }

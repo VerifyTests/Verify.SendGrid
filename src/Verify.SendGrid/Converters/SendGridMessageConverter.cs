@@ -6,8 +6,23 @@
         writer.WriteStartObject();
         writer.WriteMember(mail, mail.From, "From");
         writer.WriteMember(mail, mail.Personalizations, "Personalizations");
-        writer.WriteMember(mail, mail.ReplyTo, "ReplyTo");
-        writer.WriteMember(mail, mail.ReplyTos, "ReplyTos");
+        var replyTos = mail.ReplyTos ?? new();
+        if (mail.ReplyTo != null)
+        {
+            replyTos.Add(mail.ReplyTo);
+        }
+
+        if (replyTos.Any())
+        {
+            if (replyTos.Count == 1)
+            {
+                writer.WriteMember(mail, replyTos[0], "ReplyTo");
+            }
+            else
+            {
+                writer.WriteMember(mail, replyTos, "ReplyTo");
+            }
+        }
         writer.WriteMember(mail, mail.Subject, "Subject");
         writer.WriteMember(mail, mail.Contents, "Contents");
         writer.WriteMember(mail, mail.PlainTextContent, "PlainTextContent");

@@ -33,6 +33,19 @@ public class Tests
     }
 
     #endregion
+    #region Personalization
+
+    [Fact]
+    public Task Personalization()
+    {
+        var personalization = new Personalization
+        {
+            Subject = "The subject"
+        };
+        return Verify(personalization);
+    }
+
+    #endregion
 
 
     #region SendGridMessage
@@ -52,4 +65,39 @@ public class Tests
     }
 
     #endregion
+
+    [Fact]
+    public Task SingleReplyTo()
+    {
+        var mail = new SendGridMessage
+        {
+            ReplyTo = new("test@example.com", "DX Team"),
+        };
+        return Verify(mail);
+    }
+
+    [Fact]
+    public Task SingleReplyTos()
+    {
+        var mail = new SendGridMessage
+        {
+            ReplyTos = new()
+            {
+                new("test@example.com", "DX Team")
+            },
+        };
+        return Verify(mail);
+    }
+    [Fact]
+    public Task SingleReplyToAndReplyTos()
+    {
+        var mail = new SendGridMessage
+        {
+            ReplyTos = new()
+            {
+                new("test@example.com", "DX Team")
+            },
+        };
+        return Verify(mail);
+    }
 }

@@ -80,7 +80,7 @@ public Task SendGridMessage()
     return Verify(mail);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L38-L54' title='Snippet source file'>snippet source</a> | <a href='#snippet-sendgridmessage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L51-L67' title='Snippet source file'>snippet source</a> | <a href='#snippet-sendgridmessage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Results in: 
@@ -92,9 +92,7 @@ Results in:
   From: DX Team <test@example.com>,
   Personalizations: [
     {
-      Tos: [
-        Test User <test@example.com>
-      ]
+      To: Test User <test@example.com>
     }
   ],
   Subject: Sending with Twilio SendGrid is Fun,
@@ -102,7 +100,7 @@ Results in:
   HtmlContent: <strong>and easy to do anywhere, even with C#</strong>
 }
 ```
-<sup><a href='/src/Tests/Tests.SendGridMessage.verified.txt#L1-L13' title='Snippet source file'>snippet source</a> | <a href='#snippet-Tests.SendGridMessage.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.SendGridMessage.verified.txt#L1-L11' title='Snippet source file'>snippet source</a> | <a href='#snippet-Tests.SendGridMessage.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 

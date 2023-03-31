@@ -2,9 +2,7 @@
   From: DX Team <test@example.com>,
   Personalizations: [
     {
-      Tos: [
-        Test User <test@example.com>
-      ]
+      To: Test User <test@example.com>
     }
   ],
   Subject: Sending with Twilio SendGrid is Fun,
