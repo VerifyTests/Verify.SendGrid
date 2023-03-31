@@ -4,7 +4,7 @@
 
     [ModuleInitializer]
     public static void Initialize() =>
-        VerifyMailMessage.Initialize();
+        VerifySendGrid.Initialize();
 
     #endregion
 

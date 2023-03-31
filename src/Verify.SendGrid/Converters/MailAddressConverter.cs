@@ -5,7 +5,7 @@ class MailAddressConverter :
 {
     public override void Write(VerifyJsonWriter writer, EmailAddress address)
     {
-        if (address.Name == "")
+        if (address.Name == null)
         {
             writer.WriteRawValueWithScrubbers(address.Email);
         }

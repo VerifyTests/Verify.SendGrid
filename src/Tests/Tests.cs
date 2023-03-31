@@ -5,67 +5,6 @@ using System.Net.Mime;
 [UsesVerify]
 public class Tests
 {
-    #region ContentDisposition
-
-    [Fact]
-    public Task ContentDisposition()
-    {
-        var content = new ContentDisposition("attachment; filename=\"filename.jpg\"");
-        return Verify(content);
-    }
-
-    #endregion
-
-    [Fact]
-    public Task ContentDispositionFull()
-    {
-        var content = new ContentDisposition("inline; filename=\"filename.jpg\"")
-        {
-            CreationDate = DateTime.Now,
-            ModificationDate = DateTime.Now,
-            ReadDate = DateTime.Now,
-            Size = 2,
-            Parameters =
-            {
-                {
-                    "key", "value"
-                }
-            }
-        };
-        return Verify(content);
-    }
-
-    #region ContentType
-
-    [Fact]
-    public Task ContentType()
-    {
-        var content = new ContentType("text/html; charset=utf-8")
-        {
-            Name = "name.txt"
-        };
-        return Verify(content);
-    }
-
-    #endregion
-
-    [Fact]
-    public Task ContentTypeFull()
-    {
-        var content = new ContentType("text/html; charset=utf-8")
-        {
-            Name = "name.txt",
-            Boundary = "the boundary",
-            Parameters =
-            {
-                {
-                    "key", "value"
-                }
-            }
-        };
-        return Verify(content);
-    }
-
     #region MailAttachment
 
     [Fact]

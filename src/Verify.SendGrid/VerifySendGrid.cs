@@ -16,11 +16,15 @@ public static class VerifySendGrid
         InnerVerifier.ThrowIfVerifyHasBeenRun();
         VerifierSettings.AddExtraSettings(_ =>
         {
-            _.Converters.Add(new ContentDispositionConverter());
-            _.Converters.Add(new ContentTypeConverter());
             _.Converters.Add(new MailAddressConverter());
             _.Converters.Add(new MailAttachmentConverter());
             _.Converters.Add(new MailMessageConverter());
         });
     }
+
+    internal static DateTime UnixTimeStampToDateTime(double unixTimeStamp) =>
+        // Unix timestamp is seconds past epoch
+        new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc)
+            .AddSeconds(unixTimeStamp)
+            .ToUniversalTime();
 }
