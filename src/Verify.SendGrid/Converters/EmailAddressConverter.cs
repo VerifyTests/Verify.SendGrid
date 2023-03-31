@@ -1,6 +1,4 @@
-﻿using SendGrid.Helpers.Mail;
-
-class MailAddressConverter :
+﻿class EmailAddressConverter :
     WriteOnlyJsonConverter<EmailAddress>
 {
     public override void Write(VerifyJsonWriter writer, EmailAddress address)

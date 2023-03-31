@@ -80,7 +80,7 @@ public Task SendGridMessage()
     return Verify(mail);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L23-L39' title='Snippet source file'>snippet source</a> | <a href='#snippet-sendgridmessage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L38-L54' title='Snippet source file'>snippet source</a> | <a href='#snippet-sendgridmessage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Results in: 

@@ -19,6 +19,21 @@ public class Tests
 
     #endregion
 
+    #region EmailAddress
+
+    [Fact]
+    public Task EmailAddress()
+    {
+        var address = new EmailAddress
+        {
+            Email = "joe.smith@example.com",
+            Name = "Joe Smith"
+        };
+        return Verify(address);
+    }
+
+    #endregion
+
 
     #region SendGridMessage
 

@@ -16,9 +16,9 @@ public static class VerifySendGrid
         InnerVerifier.ThrowIfVerifyHasBeenRun();
         VerifierSettings.AddExtraSettings(_ =>
         {
-            _.Converters.Add(new MailAddressConverter());
-            _.Converters.Add(new MailAttachmentConverter());
-            _.Converters.Add(new MailMessageConverter());
+            _.Converters.Add(new EmailAddressConverter());
+            _.Converters.Add(new AttachmentConverter());
+            _.Converters.Add(new SendGridMessageConverter());
         });
     }
 
