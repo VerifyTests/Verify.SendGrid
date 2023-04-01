@@ -1,15 +1,15 @@
-# <img src="/src/icon.png" height="30px"> Verify.MailMessage
+# <img src="/src/icon.png" height="30px"> Verify.SendGrid
 
 [![Discussions](https://img.shields.io/badge/Verify-Discussions-yellow?svg=true&label=)](https://github.com/orgs/VerifyTests/discussions)
-[![Build status](https://ci.appveyor.com/api/projects/status/cpmnux3i0euge195?svg=true)](https://ci.appveyor.com/project/SimonCropp/verify-mailmessage)
-[![NuGet Status](https://img.shields.io/nuget/v/Verify.MailMessage.svg)](https://www.nuget.org/packages/Verify.MailMessage/)
+[![Build status](https://ci.appveyor.com/api/projects/status/6jexhwrxrfbe9dsf?svg=true)](https://ci.appveyor.com/project/SimonCropp/verify-sendgrid)
+[![NuGet Status](https://img.shields.io/nuget/v/Verify.SendGrid.svg)](https://www.nuget.org/packages/Verify.SendGrid/)
 
-Extends [Verify](https://github.com/VerifyTests/Verify) to allow verification of [MailMessage](https://learn.microsoft.com/en-us/dotnet/api/system.net.mail.mailmessage) and related types.
+Extends [Verify](https://github.com/VerifyTests/Verify) to allow verification of [SendGrid](https://github.com/sendgrid/sendgrid-csharp).
 
 
 ## NuGet package
 
-https://nuget.org/packages/Verify.MailMessage/
+https://nuget.org/packages/Verify.SendGrid/
 
 
 ## Usage
