@@ -81,20 +81,6 @@ public class Tests
     #endregion
 
     [Fact]
-    public Task SendGridMessage2()
-    {
-        var mail = new SendGridMessage
-        {
-            From = new("test@example.com", "DX Team"),
-            Subject = "Sending with Twilio SendGrid is Fun",
-            PlainTextContent = "and easy to do anywhere, even with C#",
-            HtmlContent = "<strong>and easy to do anywhere, even with C#</strong>"
-        };
-        mail.AddTo(new EmailAddress("test@example.com", "Test User"));
-        return Verify(mail);
-    }
-
-    [Fact]
     public Task SingleReplyTo()
     {
         var mail = new SendGridMessage
