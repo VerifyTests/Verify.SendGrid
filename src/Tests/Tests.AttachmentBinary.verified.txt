@@ -1,6 +1,5 @@
 ﻿{
   Filename: name.txt,
   Disposition: attachment,
-  Type: text/html,
-  Content: The content
+  Type: application/vnd.ms-powerpoint
 }

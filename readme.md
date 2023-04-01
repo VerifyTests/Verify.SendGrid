@@ -33,16 +33,18 @@ public static void Initialize() =>
 [Fact]
 public Task Attachment()
 {
+    var contentBytes = "The content"u8.ToArray();
     var attachment = new Attachment
     {
         Filename = "name.txt",
-        Content = "The content",
-        Disposition = "text/html; charset=utf-8"
+        Content = Convert.ToBase64String(contentBytes),
+        Type = "text/html",
+        Disposition = "attachment"
     };
     return Verify(attachment);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L6-L20' title='Snippet source file'>snippet source</a> | <a href='#snippet-attachment' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L6-L22' title='Snippet source file'>snippet source</a> | <a href='#snippet-attachment' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Results in: 
@@ -80,7 +82,7 @@ public Task SendGridMessage()
     return Verify(mail);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L51-L67' title='Snippet source file'>snippet source</a> | <a href='#snippet-sendgridmessage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L65-L81' title='Snippet source file'>snippet source</a> | <a href='#snippet-sendgridmessage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Results in: 

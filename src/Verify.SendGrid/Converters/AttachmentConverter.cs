@@ -7,9 +7,15 @@
 
         writer.WriteMember(attachment, attachment.Filename, "Filename");
         writer.WriteMember(attachment, attachment.Disposition, "Disposition");
+        writer.WriteMember(attachment, attachment.Type, "Type");
         writer.WriteMember(attachment, attachment.ContentId, "ContentId");
-        //TODO: check Disposition and render text
-        writer.WriteMember(attachment, attachment.Content, "Content");
+
+        if (attachment.Type.StartsWith("text"))
+        {
+            var data = Convert.FromBase64String(attachment.Content);
+            var decoded = Encoding.UTF8.GetString(data);
+            writer.WriteMember(attachment, decoded, "Content");
+        }
 
         writer.WriteEndObject();
     }
