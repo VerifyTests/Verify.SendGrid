@@ -62,7 +62,6 @@ Results in:
 <!-- endSnippet -->
 
 
-
 ### SendGridMessage
 
 <!-- snippet: SendGridMessage -->
@@ -108,4 +107,4 @@ Results in:
 
 ## Icon
 
-[Mail](https://thenounproject.com/icon/mail-5633084/)  from [The Noun Project](https://thenounproject.com).
+[Grid](https://thenounproject.com/icon/grid-2082325/)  from [The Noun Project](https://thenounproject.com).
