@@ -54,11 +54,12 @@ Results in:
 ```txt
 {
   Filename: name.txt,
-  Disposition: text/html; charset=utf-8,
+  Disposition: attachment,
+  Type: text/html,
   Content: The content
 }
 ```
-<sup><a href='/src/Tests/Tests.Attachment.verified.txt#L1-L5' title='Snippet source file'>snippet source</a> | <a href='#snippet-Tests.Attachment.verified.txt' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.Attachment.verified.txt#L1-L6' title='Snippet source file'>snippet source</a> | <a href='#snippet-Tests.Attachment.verified.txt' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
