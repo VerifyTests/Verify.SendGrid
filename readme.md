@@ -6,6 +6,8 @@
 
 Extends [Verify](https://github.com/VerifyTests/Verify) to allow verification of [SendGrid](https://github.com/sendgrid/sendgrid-csharp).
 
+**See [Milestones](../../milestones?state=closed) for release notes.**
+
 
 ## NuGet package
 
