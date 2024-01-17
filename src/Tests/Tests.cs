@@ -1,6 +1,5 @@
 ﻿using SendGrid.Helpers.Mail;
 
-[UsesVerify]
 public class Tests
 {
     #region Attachment
