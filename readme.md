@@ -46,7 +46,7 @@ public Task Attachment()
     return Verify(attachment);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L6-L22' title='Snippet source file'>snippet source</a> | <a href='#snippet-attachment' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L5-L21' title='Snippet source file'>snippet source</a> | <a href='#snippet-attachment' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Results in: 
@@ -84,7 +84,7 @@ public Task SendGridMessage()
     return Verify(mail);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L65-L81' title='Snippet source file'>snippet source</a> | <a href='#snippet-sendgridmessage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L64-L80' title='Snippet source file'>snippet source</a> | <a href='#snippet-sendgridmessage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Results in: 
