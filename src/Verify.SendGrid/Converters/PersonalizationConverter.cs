@@ -8,7 +8,7 @@
         writer.WriteMember(personalization, personalization.From, "From");
         writer.WriteMember(personalization, personalization.Subject, "Subject");
         var to = personalization.Tos;
-        if (to != null && to.Any())
+        if (to != null && to.Count != 0)
         {
             if (to.Count == 1)
             {
@@ -21,7 +21,7 @@
         }
 
         var cc = personalization.Ccs;
-        if (cc != null && cc.Any())
+        if (cc != null && cc.Count != 0)
         {
             if (cc.Count == 1)
             {
@@ -34,7 +34,7 @@
         }
 
         var bcc = personalization.Bccs;
-        if (bcc != null && bcc.Any())
+        if (bcc != null && bcc.Count != 0)
         {
             if (bcc.Count == 1)
             {

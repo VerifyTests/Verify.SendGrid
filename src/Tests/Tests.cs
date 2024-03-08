@@ -94,10 +94,7 @@ public class Tests
     {
         var mail = new SendGridMessage
         {
-            ReplyTos = new()
-            {
-                new("test@example.com", "DX Team")
-            },
+            ReplyTos = [new("test@example.com", "DX Team")],
         };
         return Verify(mail);
     }
@@ -106,10 +103,7 @@ public class Tests
     {
         var mail = new SendGridMessage
         {
-            ReplyTos = new()
-            {
-                new("test@example.com", "DX Team")
-            },
+            ReplyTos = [new("test@example.com", "DX Team")],
         };
         return Verify(mail);
     }

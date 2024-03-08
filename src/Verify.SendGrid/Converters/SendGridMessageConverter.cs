@@ -12,7 +12,7 @@
             replyTos.Add(mail.ReplyTo);
         }
 
-        if (replyTos.Any())
+        if (replyTos.Count != 0)
         {
             if (replyTos.Count == 1)
             {
