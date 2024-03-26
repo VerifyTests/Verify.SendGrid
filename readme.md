@@ -17,20 +17,20 @@ https://nuget.org/packages/Verify.SendGrid/
 ## Usage
 
 <!-- snippet: Enable -->
-<a id='snippet-enable'></a>
+<a id='snippet-Enable'></a>
 ```cs
 [ModuleInitializer]
 public static void Initialize() =>
     VerifySendGrid.Initialize();
 ```
-<sup><a href='/src/Tests/ModuleInitializer.cs#L3-L9' title='Snippet source file'>snippet source</a> | <a href='#snippet-enable' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/ModuleInitializer.cs#L3-L9' title='Snippet source file'>snippet source</a> | <a href='#snippet-Enable' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
 ### Attachment
 
 <!-- snippet: Attachment -->
-<a id='snippet-attachment'></a>
+<a id='snippet-Attachment'></a>
 ```cs
 [Fact]
 public Task Attachment()
@@ -46,7 +46,7 @@ public Task Attachment()
     return Verify(attachment);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L5-L21' title='Snippet source file'>snippet source</a> | <a href='#snippet-attachment' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L5-L21' title='Snippet source file'>snippet source</a> | <a href='#snippet-Attachment' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Results in: 
@@ -68,7 +68,7 @@ Results in:
 ### SendGridMessage
 
 <!-- snippet: SendGridMessage -->
-<a id='snippet-sendgridmessage'></a>
+<a id='snippet-SendGridMessage'></a>
 ```cs
 [Fact]
 public Task SendGridMessage()
@@ -84,7 +84,7 @@ public Task SendGridMessage()
     return Verify(mail);
 }
 ```
-<sup><a href='/src/Tests/Tests.cs#L64-L80' title='Snippet source file'>snippet source</a> | <a href='#snippet-sendgridmessage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Tests.cs#L64-L80' title='Snippet source file'>snippet source</a> | <a href='#snippet-SendGridMessage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 Results in: 
