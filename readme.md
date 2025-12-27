@@ -1,7 +1,7 @@
 # <img src="/src/icon.png" height="30px"> Verify.SendGrid
 
 [![Discussions](https://img.shields.io/badge/Verify-Discussions-yellow?svg=true&label=)](https://github.com/orgs/VerifyTests/discussions)
-[![Build status](https://ci.appveyor.com/api/projects/status/6jexhwrxrfbe9dsf?svg=true)](https://ci.appveyor.com/project/SimonCropp/verify-sendgrid)
+[![Build status](https://img.shields.io/appveyor/build/SimonCropp/verify-sendgrid)](https://ci.appveyor.com/project/SimonCropp/verify-sendgrid)
 [![NuGet Status](https://img.shields.io/nuget/v/Verify.SendGrid.svg)](https://www.nuget.org/packages/Verify.SendGrid/)
 
 Extends [Verify](https://github.com/VerifyTests/Verify) to allow verification of [SendGrid](https://github.com/sendgrid/sendgrid-csharp).
